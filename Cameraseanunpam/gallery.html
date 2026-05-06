@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Gallery</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body style="background-color: #000">
+    <span class="material-symbols-outlined back"> arrow_back </span>
+
+    <div class="gallery-container"></div>
+
+    <script src="./db.js"></script>
+    <script src="./gallery.js"></script>
+    <script>
+      let backBtn = document.querySelector(".back");
+      backBtn.addEventListener("click", (e) => {
+        location.assign("./index.html");
+      });
+    </script>
+  </body>
+</html>

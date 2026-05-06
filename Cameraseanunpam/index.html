@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Camera App Universitas Pamulang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="shortcut icon" href="images/logo_unpam.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="video-container">
+      <video autoplay playsinline muted></video>
+      
+      <div class="header-banner">
+      <div class="logo-container">
+     <img src="images/logo_unpam.png" alt="Logo UNPAM"> 
+      </div>
+  <div class="banner-text-container">
+    <div class="banner-title">Camera Booth Universitas Pamulang</div>
+    <div class="banner-subtext">Sean Theon Sarumaha | NIM: 231011402669</div>
+    <div class="banner-subtext">Email: seansarumaha12@gmail.com</div>
+  </div>
+</div>
+
+      <div class="filter-layer"></div>
+    </div>
+
+    <div class="action-container">
+    
+      <div class="record-btn-container">
+        <div class="record-btn"></div>
+      </div>
+      <div class="capture-btn-container">
+        <div class="capture-btn"></div>
+      </div>
+      <span class="material-symbols-outlined" title="Open Gallery">perm_media</span>
+    </div>
+
+    <div class="timer-container">
+      <h3 class="timer">00:00:00</h3>
+    </div>
+
+<div class="filter-container">
+    <div class="filter none">Normal</div>
+    <div class="filter vintage-90s">90s Retro</div>
+    <div class="filter sepia-classic">Classic Sepia</div>
+    <div class="filter grainy-mono">Grainy B&W</div>
+    <div class="filter warm-analog">Warm Analog</div>
+    <div class="filter faded-dream">Faded Dream</div>
+</div>
+
+
+    <script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
+    <script src="./db.js"></script>
+    <script src="./script.js"></script>
+    <script>
+      let gallery = document.querySelector(".material-symbols-outlined");
+      gallery.addEventListener("click", (e) => {
+        location.assign("./gallery.html");
+      });
+    </script>
+  </body>
+</html>

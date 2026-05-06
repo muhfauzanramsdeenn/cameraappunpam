@@ -1,0 +1,410 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.video-container {
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    overflow: hidden;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+}
+
+.action-container {
+    width: 5rem;
+    position: absolute;
+    top: calc((100vh - 12rem)/2);
+    right: 5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    gap: 3rem;
+}
+
+.action-container>* {
+    width: 100%;
+    height: 5rem;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.record-btn-container,
+.capture-btn-container {
+    cursor: pointer;
+}
+
+.record-btn {
+    background-color: red;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.capture-btn {
+    background-color: white;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.scale-record {
+    animation-name: scale-record;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+
+.scale-capture {
+    animation-name: scale-capture;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+}
+
+@keyframes scale-record {
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes scale-capture {
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.timer-container {
+    position: absolute;
+    bottom: 10rem;
+    left: 4rem;
+    color: white;
+    font-size: 1.2rem;
+    background-color: black;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    width: 7rem;
+    justify-content: center;
+    display: none;
+
+}
+
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: absolute;
+    top: calc((100vh - 16rem)/2);
+    left: 5rem;
+    width: 5rem;
+}
+
+.filter {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    border: 3px solid white; /* Tambahkan border agar terlihat */
+    
+    /* Perbaikan Path dan Tampilan */
+    background-image: url("images/logo_unpam.png");
+    background-position: center;
+    background-size: contain; /* Gunakan contain agar logo tidak terpotong */
+    background-repeat: no-repeat;
+    
+    /* Gunakan background-color putih/terang agar logo terlihat jelas */
+    background-color: rgba(255, 255, 255, 0.8); 
+    
+    cursor: pointer;
+    z-index: 2;
+    transition: transform 0.2s;
+}
+
+.filter:hover {
+    transform: scale(1.1);
+    border-color: #1a0079;
+}
+
+
+
+.none {
+    background-color: transparent;
+}
+
+.jaipur {
+    background-color: #FFC0CB57;
+    /* Warm reddish-pink */
+}
+
+.rio-de-janerio {
+    background-color: rgba(255, 165, 0, 0.5);
+    /* Warm yellow-orange */
+}
+
+.tokyo {
+    background-color: rgb(0 0 0 / 78%)
+}
+
+.filter-layer {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+}
+
+
+
+.material-symbols-outlined {
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.material-symbols-outlined:hover {
+    transform: scale(1.1);
+}
+
+/* ======================= Gallery CSS ======================= */
+.back {
+    color: white;
+    margin: 1rem;
+    position: fixed;
+    top: 0;
+}
+
+.gallery-container {
+    width: 97vw;
+    margin-top: 4rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.media-box {
+    height: 17rem;
+    width: 17rem;
+    border: 6px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+.media {
+    height: calc(100% - 2rem);
+    background-color: white;
+
+}
+
+.media-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #fff;
+}
+
+.gallery-btns {
+    color:
+        #000;
+    font-size: 2.5rem;
+}
+
+img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+video {
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    .filter-container {
+        top: 0;
+        left: 0;
+    }
+
+    .action-container {
+        bottom: 0;
+        right: 1rem;
+        gap: 1rem;
+    }
+}
+/* Container Video harus relatif agar banner bisa menempel di atas */
+.video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Style untuk Banner Hijau */
+.header-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Sesuaikan tinggi banner */
+    background-color: #1a0079; /* Warna hijau sesuai gambar */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10; /* Pastikan di atas video */
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Logo RISJAM */
+.logo-container img {
+    height: 60px; /* Sesuaikan ukuran logo */
+    width: auto;
+    margin-right: 15px;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+}
+
+/* Tulisan Masjid */
+.banner-text {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Pastikan video memenuhi layar */
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Pastikan video memenuhi layar HP */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar video penuh satu layar HP */
+}
+
+/* Banner agar pas di Mobile */
+.header-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Diperkecil untuk mobile */
+    background-color: #1a007991;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.logo-container img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.banner-text {
+    color: white;
+    font-size: 0.9rem; /* Ukuran teks menyesuaikan layar kecil */
+    font-weight: bold;
+}
+
+.filter-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none; /* Agar tidak menghalangi klik tombol */
+}
+/* Pengaturan Umum Tombol Filter */
+.filter {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    
+    background-image: url("./images/logo_unpam.png");
+    background-position: center;
+    background-size: 70%; /* Ukuran logo di dalam lingkaran */
+    background-repeat: no-repeat;
+    background-color: transparent; /* Dasar putih agar logo jelas */
+    cursor: pointer;
+}
+
+/* --- Definisi Warna Filter Retro --- */
+
+/* 1. Vintage 90s (Nuansa Kebiruan/Pudar) */
+.vintage-90s {
+    background-color: rgba(60, 90, 150, 0.25);
+    filter: contrast(1.1) brightness(1.1);
+}
+
+/* 2. Classic Sepia (Nuansa Cokelat Jadul) */
+.sepia-classic {
+    background-color: rgba(112, 66, 20, 0.3);
+}
+
+/* 3. Grainy Mono (Hitam Putih Klasik) */
+.grainy-mono {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 4. Warm Analog (Nuansa Kuning Hangat/Kamera Analog) */
+.warm-analog {
+    background-color: rgba(255, 165, 0, 0.2);
+}
+
+/* 5. Faded Dream (Efek Pudar Lembut) */
+.faded-dream {
+    background-color: rgba(255, 200, 200, 0.2);
+}
